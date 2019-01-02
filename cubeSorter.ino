@@ -1,4 +1,3 @@
-
 int iterations=0;
 float place=0;
 float distance=0;
@@ -23,14 +22,8 @@ Servo myservo;
 int sensor1 = 13;
 int sensor2 = 12;
 
-
-// Create the motor shield object with the default I2C address
 Adafruit_MotorShield AFMS = Adafruit_MotorShield(); 
-// Or, create it with a different I2C address (say for stacking)
-// Adafruit_MotorShield AFMS = Adafruit_MotorShield(0x61); 
 
-// Connect a stepper motor with 200 steps per revolution (1.8 degree)
-// to motor port #2 (M3 and M4)
 Adafruit_StepperMotor *leftRight = AFMS.getStepper(200, 2);
 Adafruit_StepperMotor *upDown = AFMS.getStepper(200, 1);
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
@@ -98,7 +91,7 @@ void setup() {
     while (1); // halt!
   }
   AFMS.begin();  // create with the default frequency 1.6KHz
-  //AFMS.begin(1000);  // OR with a different frequency, say 1KHz
+
 myservo.attach(9);
 
 int iterations=0;
